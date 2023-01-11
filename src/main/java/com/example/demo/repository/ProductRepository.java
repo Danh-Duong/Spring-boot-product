@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
@@ -15,4 +16,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     @Query("select p from Product p where p.name like  :name%")
     public ArrayList<Product> findAllNameContain(@Param("name") String name);
+
+    public List<Product> findByNameLike(String name);
 }
