@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -60,8 +62,9 @@ public class ProductService {
         return "redirect:/list";
     }
 
+    // có thể gộp get list user và search thành 1
     public String searchProduct(String name,Model model){
-        ArrayList<Product> list= productRepository.findAllNameContain(name);
+        List<Product> list= productRepository.findAllNameContain(name);
         model.addAttribute("list",list);
         return "list";
     }
