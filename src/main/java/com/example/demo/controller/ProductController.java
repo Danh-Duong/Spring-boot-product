@@ -19,10 +19,10 @@ public class ProductController {
         return "index";
     }
 
-//    @GetMapping("/list")
-//    public String listProduct(Model model){
-//        return productService.listProduct(model);
-//    }
+    @GetMapping("/list")
+    public String listProduct(Model model){
+        return productService.listProduct(model);
+    }
 
     @GetMapping("/add")
     public String addProductForm(Model model){
